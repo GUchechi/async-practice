@@ -14,15 +14,23 @@ const getTodos = (resource, callback) => {
     request.send()
 }
 
+// Promise Example
 
+const getSomething = () => {
+    return new Promise((resolve, reject) => {
+        // resolve('Some Data')
+        reject('Error Data')
+    })
+}
 
-getTodos('JSON folder/Bass.json',(err, data) => {
+// getSomething().then((data) => {
+//     console.log(data)
+// }, (err) => {
+//     console.log(err)
+// })
+
+getSomething().then(data => {
     console.log(data)
-    getTodos('JSON folder/sing.json',(err, data) => {
-        console.log(data)
-    })
-    getTodos('JSON folder/todos.json',(err, data) => {
-        console.log(data)
-    })
-    
+}).catch(err => {
+    console.log(err)
 })
