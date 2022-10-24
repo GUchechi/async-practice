@@ -15,8 +15,14 @@ const getTodos = (resource) => {
         })   
 }
 
-getTodos('JSON folder/Basas.json').then(data => {
+getTodos('JSON folder/Bass.json').then(data => {
     console.log('Promise resolved:' ,data)
+    return getTodos('JSON folder/sing.json').then(data => {
+        console.log('Promise resolved:' ,data)
+    return getTodos('JSON folder/todos.json').then(data => {
+        console.log('Promise resolved:' ,data)
+    });
+    });
 }).catch(err =>{
     console.log('Promise rejected:',err)
 })
